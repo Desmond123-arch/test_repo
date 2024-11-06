@@ -9,12 +9,9 @@ function App() {
 
   return (
     <>
-      <Helmet>
-        <meta property="og:title" content="The Rock" />
-        <meta property="og:type" content="video.movie" />
-        <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
-        <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
-      </Helmet>
+      {/* <Helmet>
+
+      </Helmet> */}
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
