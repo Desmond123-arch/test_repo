@@ -2,16 +2,19 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* <Helmet>
-
-      </Helmet> */}
+      <Helmet>
+        <meta property="og:title" content="The Rock" />
+        <meta property="og:type" content="video.movie" />
+        <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
+        <meta property="og:image" content="https://res.cloudinary.com/duocksbuc/image/upload/v1/media/news/images/1000298989_nsufd4" />
+      </Helmet>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
