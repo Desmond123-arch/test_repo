@@ -1,7 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import vitePluginReactHelmet from './vite-plugin-react-helmet'
+import generateMetaTags from './generateMetaTags'
 
 export default defineConfig({
-  plugins: [react(), vitePluginReactHelmet()],
+  plugins: [
+    react(),
+    {
+      name: 'html-transform',
+      transformIndexHtml(html) {
+        return html.replace(
+          '<!-- OG_TAGS_PLACEHOLDER -->',
+          generateMetaTags()
+        )
+      }
+    }
+  ]
 })
