@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 const vitePluginReactHelmet = () => {
   return {
@@ -8,9 +8,9 @@ const vitePluginReactHelmet = () => {
       return html.replace(
         '</head>',
         `
-          ${helmet.title.toString()}
-          ${helmet.meta.toString()}
-          ${helmet.link.toString()}
+          ${helmet.title.toComponent()}
+          ${helmet.meta.toComponent()}
+          ${helmet.link.toComponent()}
         </head>
         `
       );
