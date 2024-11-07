@@ -2,20 +2,20 @@ import { useEffect } from "react";
 
 const usePageSEO = ({
     title,
-    description,
-    keywords = [],
+    description = 'Default description',
+    keywords = ['default', 'keywords'],
     ogTitle,
     ogDescription,
     ogImage,
     ogUrl,
 }) => {
     useEffect(() => {
-        document.title = title;
+        document.title = title || 'Default Title';
         setMetaTag('name', 'description', description);
         setMetaTag('name', 'keywords', keywords.join(', '));
-        setMetaTag('property', 'og:title', ogTitle || title);
+        setMetaTag('property', 'og:title', ogTitle || title || 'Default OG Title');
         setMetaTag('property', 'og:description', ogDescription || description);
-        setMetaTag('property', 'og:image', ogImage);
+        setMetaTag('property', 'og:image', ogImage || 'https://example.com/default-image.jpg');
         setMetaTag('property', 'og:url', ogUrl || window.location.href);
     }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl]);
 
